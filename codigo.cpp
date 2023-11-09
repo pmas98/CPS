@@ -7,7 +7,6 @@ DHT11 dht11(4);
 #define type "MQ-135"
 #define ADC_Bit_Resolution 12
 #define RatioMQ135CleanAir 3.6
-int rele=18;
 
 double CO2 = 0;
 MQUnifiedsensor MQ135(placa, Voltage_Resolution, ADC_Bit_Resolution, pin, type);
@@ -43,12 +42,9 @@ void setup() {
     Serial.println("Warning: Connection issue found, R0 is zero (Analog pin with short circuit to ground). Please check your wiring and supply.");
     while (1) {}
   }
-  pinMode(rele, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(rele, HIGH);
-
   int temperature = dht11.readTemperature();
   digitalWrite(12, HIGH);
   int humidity = dht11.readHumidity();
@@ -66,7 +62,4 @@ void loop() {
 
   // Wait for 5 seconds before printing the next measurement
   delay(500);
-  digitalWrite(rele, LOW);
-  delay(500);
-
 }

@@ -11,9 +11,9 @@
 #define ID_MQTT  "Cliente_MQTT"     
 /*  Variáveis e constantes globais */
 /* SSID / nome da rede WI-FI que deseja se conectar */
-const char* SSID = "Meuparaiso2"; 
+const char* SSID = ""; 
 /*  Senha da rede WI-FI que deseja se conectar */
-const char* PASSWORD = "c60812520"; 
+const char* PASSWORD = ""; 
   
 /* URL do broker MQTT que deseja utilizar */
 const char* BROKER_MQTT = "broker.hivemq.com"; 
